@@ -22,7 +22,7 @@ class TabController < ApplicationController
   
   layout 'base'
   
-  before_filter :find_project, :authorize, :only => [:show]
+  before_action :find_project, :authorize, :only => [:show]
   
   def show
     @tab_text = Tab.get_tab_text(@project)
